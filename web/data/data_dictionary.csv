@@ -1,0 +1,54 @@
+column,description,data_type,measurement_scale,example,raw_or_derived
+session_id,Unique identifier for one customer shopping session,string,nominal,SESS1000042,raw
+customer_id,Identifier for the customer who owns the session (customers can have multiple sessions),string,nominal,CUST100042,raw
+session_date,Calendar date the session occurred,date,interval,2025-03-14,raw
+day_of_week,Day name derived from session_date,string,nominal,Saturday,derived
+hour,Hour of day the session started (0-23),integer,interval,20,raw
+season,Marketing season/period bucket derived from the month,string,nominal,Festive Season,derived
+customer_age,Customer age in years,integer,ratio,29,raw
+gender,Self-reported gender,string,nominal,Female,raw
+income_level,Household income bracket,string,ordinal,Upper-Middle,raw
+city_tier,City classification tier (1 = largest metros),string,ordinal,Tier 1,raw
+device,Device used for this session,string,nominal,Mobile,raw
+acquisition_channel,Marketing channel that originally acquired the customer,string,nominal,Paid Search,raw
+customer_segment,Behavioral segment based on historical order count (New/Occasional/Regular/Loyal),string,ordinal,Loyal,derived
+previous_orders,Number of orders placed by this customer prior to the observation window,integer,ratio,6,raw
+days_since_last_order,Days since the customer's previous order (missing for New customers),float,ratio,18,raw
+session_duration_min,Total session duration in minutes,float,ratio,7.42,raw
+pages_viewed,Number of pages viewed in the session,integer,ratio,11,raw
+products_viewed,Number of distinct products viewed in the session,integer,ratio,6,raw
+searches,Number of on-site searches performed,integer,ratio,2,raw
+add_to_cart,Whether the session included at least one add-to-cart event,boolean,nominal,True,raw
+cart_items,Number of items added to cart (0 if add_to_cart is False),integer,ratio,3,raw
+wishlist_added,Whether an item was added to the wishlist,boolean,nominal,False,raw
+discount_exposed,Whether the customer was exposed to a discount during the session,boolean,nominal,True,raw
+discount_pct,Discount percentage exposed (0 if not discount_exposed),float,ratio,15,raw
+free_shipping,Whether free shipping was offered,boolean,nominal,True,raw
+campaign_exposed,Whether the session was exposed to a marketing campaign,boolean,nominal,True,raw
+campaign_type,Type of campaign exposed (None if not campaign_exposed),string,nominal,Flash Sale,raw
+offer_type,Type of promotional offer exposed (None if not campaign_exposed),string,nominal,Percentage Off,raw
+offer_value,Monetary value of the offer in INR (0 if not campaign_exposed),float,ratio,150,raw
+estimated_delivery_days,Estimated delivery time quoted to the customer,integer,ratio,4,raw
+delivery_delay_days,Additional days beyond the estimate the order was delayed (0 if on time),integer,ratio,0,raw
+customer_rating_history,Customer's average historical rating given to past orders,float,interval,4.2,raw
+payment_method,Payment method used or selected,string,nominal,UPI,raw
+category,Product category browsed/purchased,string,nominal,Electronics,raw
+price_band,Price tier of the item(s) viewed (Budget/Value/Premium/Luxury),string,ordinal,Premium,derived
+items_purchased,Number of items purchased in the session (0 if purchase is False),integer,ratio,2,raw
+purchase,Whether the session resulted in a completed purchase (the central outcome variable),boolean,nominal,True,raw
+order_value,Total order value in INR (0 if purchase is False),float,ratio,2450.5,raw
+returned,Whether the order was later returned (only possible if purchase is True),boolean,nominal,False,raw
+return_days,Days after purchase the return was initiated (0 if not returned),integer,ratio,0,raw
+customer_satisfaction,Post-purchase satisfaction rating 1-5 (null if not purchased),float,interval,4.1,raw
+profit_margin_pct,Profit margin percentage on the order (null if not purchased),float,ratio,18.4,raw
+repeat_customer,Whether the customer is not a first-time (New) customer,boolean,nominal,True,derived
+high_intent_session,Session flagged as high purchase-intent (top-quartile products viewed + add-to-cart + above-median duration),boolean,nominal,True,derived
+engagement_score,0-100 composite score blending duration/pages/products/searches/cart activity (min-max weighted blend),float,ratio,64.3,derived
+discount_dependency,0-1 score indicating how reliant the session's behavior was on discount exposure,float,ratio,0.55,derived
+cart_conversion,"Whether a cart was converted to a purchase (null if add_to_cart is False, otherwise same as purchase)",boolean,nominal,True,derived
+customer_total_spend,Sum of order_value across all of this customer's sessions in the dataset,float,ratio,8420.15,derived
+customer_avg_order_value,customer_total_spend divided by the customer's number of purchases in the dataset,float,ratio,2105.03,derived
+customer_return_rate,Share of this customer's purchases in the dataset that were returned,float,ratio,0.25,derived
+customer_value_segment,Value tier from customer_total_spend quartiles (High/Mid/Low Value/No Purchase Yet),string,ordinal,High Value,derived
+time_since_previous_purchase_days,Alias of days_since_last_order used in waiting-time analyses,float,ratio,18,derived
+next_purchase_days,Simulated days until the customer's next purchase (exponential draw parameterized by segment rate; modeling illustration -- not an observed outcome),float,ratio,12.4,derived

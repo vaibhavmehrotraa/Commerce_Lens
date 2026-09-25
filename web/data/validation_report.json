@@ -1,0 +1,175 @@
+{
+  "generated_from": "/Users/vaibhavmehrotra/Vaibhav/Commercelens/data/commerce_sessions.csv",
+  "row_count": 60000,
+  "column_count": 53,
+  "checks_passed": 33,
+  "checks_total": 33,
+  "all_passed": true,
+  "results": [
+    {
+      "check": "row_count_minimum_60000",
+      "passed": true,
+      "detail": "rows=60,000"
+    },
+    {
+      "check": "no_duplicate_session_ids",
+      "passed": true,
+      "detail": "duplicates=0"
+    },
+    {
+      "check": "valid_customer_ids",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "sensible_ages",
+      "passed": true,
+      "detail": "range=[18, 70]"
+    },
+    {
+      "check": "valid_categorical_values::gender",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "valid_categorical_values::income_level",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "valid_categorical_values::city_tier",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "valid_categorical_values::device",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "valid_categorical_values::customer_segment",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "valid_categorical_values::customer_value_segment",
+      "passed": true,
+      "detail": "unexpected=set()"
+    },
+    {
+      "check": "no_negative_order_value",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_negative_duration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_negative_delivery_time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_negative_delivery_delay",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_negative_items_purchased",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_negative_cart_items",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "purchase0_implies_order_value_0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "purchase1_implies_order_value_positive",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "purchase0_implies_items_purchased_0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "purchase1_implies_items_purchased_positive",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "returns_only_for_purchased_orders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "return_days_zero_when_not_returned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "return_days_positive_when_returned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "cart_items_zero_when_no_add_to_cart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "cart_items_positive_when_add_to_cart",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "previous_orders_consistent_with_segment",
+      "passed": true,
+      "detail": "mismatched_rows=0"
+    },
+    {
+      "check": "valid_date_range",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "discount_pct_in_0_100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "customer_return_rate_in_0_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hour_in_0_23",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "rating_history_in_1_5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "satisfaction_null_iff_not_purchased",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "margin_null_iff_not_purchased",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

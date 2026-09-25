@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+
+.DS_Store
+*.log
